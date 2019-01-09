@@ -1,0 +1,22 @@
+P127Q3	START
+	RPUSH
+;
+	LD	GR1,=-1
+	LD	GR2,=-1
+	LD	GR3,=1
+;
+	CPA	GR1,=1
+	JMI	Q
+	JUMP	W
+;
+Q	ADDA	GR3,=2
+;
+W	CPA	GR2,=1
+	JMI	E
+	JUMP	FIN
+;
+E	ADDA	GR3,=1
+;
+FIN	RPOP
+	RET
+	END
